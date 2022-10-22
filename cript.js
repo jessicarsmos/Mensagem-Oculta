@@ -32,14 +32,19 @@ function codificar(e){
             const resultado = ((codASC -65 + chaveCesar) % 26) + 65;
             total.push(String.fromCharCode(resultado))
         })
+        return resul.value = total.join('')
     } else if(select.value === "cifra_de_cesar" && decodi.checked){//para descodificar eu só mudei o perador para que ele fizesse a função contraria..
         valor.forEach(function(letra){
             const codASC = letra.charCodeAt()//codigo asc
             const resultado = ((codASC +65 - chaveCesar) % 26) + 65;
             total.push(String.fromCharCode(resultado))
         })
+        return resul.value = total.join('')//aparecer o resultado, o join é para junta a arry a uma string...
+    }else if(select.value === "base64" && codi.checked){//inclução do base64
+        return resul.value = btoa(texto.value)
+    }else{
+        return resul.value = atob(texto.value)
     }
-    return resul.value = total.join('')//aparecer o resultado, o join é para junta a arry a uma string...
 }
 
 
