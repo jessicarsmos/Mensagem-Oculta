@@ -15,6 +15,14 @@ function toggleCesar(e){ //aparecer e desaparecer a chave
         divChave.style.display = 'block'
     }else{
         divChave.style.display = "none"
+    } 
+}
+
+function mudarNome(e){
+    if(e.target.id === 'codificar'){
+        btn.innerHTML = 'Codificar';
+    } else{
+        btn.innerHTML = 'Decodificar';
     }
 }
 
@@ -40,7 +48,7 @@ function codificar(e){
             total.push(String.fromCharCode(resultado))
         })
         return resul.value = total.join('')//aparecer o resultado, o join é para junta a arry a uma string...
-    }else if(select.value === "base64" && codi.checked){//inclução do base64
+    }else if(select.value === "base64" && codi.checked){//inclusão do base64
         return resul.value = btoa(texto.value)
     }else{
         return resul.value = atob(texto.value)
@@ -48,6 +56,9 @@ function codificar(e){
 }
 
 
+
 //eventos
 select.addEventListener('change', toggleCesar)
 btn.addEventListener("click", codificar)
+codi.addEventListener('click', mudarNome)
+decodi.addEventListener('click', mudarNome)
